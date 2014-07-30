@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVCActionResult.cs" />
+    <Compile Include="MVCModel.cs" />
     <Compile Include="MVCViewResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
