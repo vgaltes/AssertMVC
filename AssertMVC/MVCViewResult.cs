@@ -38,7 +38,7 @@ namespace AssertMVC
 
         public void OfType<T>()
         {
-            Assert.AreEqual(typeof(T), model.GetType());
+            Assert.IsInstanceOfType(model, typeof(T));
         }
     }
 }
