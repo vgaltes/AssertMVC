@@ -10,7 +10,7 @@ namespace AssertMVC
             Assert.AreEqual(expectedName, result.ViewName);
         }
 
-        public static void Default(this ViewResult result)
+        public static void Default(this ViewResultBase result)
         {
             Assert.AreEqual(string.Empty, result.ViewName);
         }
