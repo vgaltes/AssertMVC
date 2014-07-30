@@ -5,7 +5,7 @@ namespace AssertMVC
 {
     public static class MVCViewResult
     {
-        public static void WithName(this ViewResult result, string expectedName)
+        public static void WithName(this ViewResultBase result, string expectedName)
         {
             Assert.AreEqual(expectedName, result.ViewName);
         }
