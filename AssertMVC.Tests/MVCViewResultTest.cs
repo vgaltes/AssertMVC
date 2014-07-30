@@ -1,5 +1,6 @@
 ﻿using AssertMVC.Tests.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Web.Mvc;
 
 namespace AssertMVC.Tests
 {
@@ -15,7 +16,7 @@ namespace AssertMVC.Tests
          
             var result = controller.IndexView(viewName);
 
-            result.AsViewResult().HasName(viewName);
+            result.ShouldBe<ViewResult>().WithName(viewName);
         }
 
         [TestMethod]
@@ -23,7 +24,7 @@ namespace AssertMVC.Tests
         {
             var result = controller.DefaultView();
 
-            result.AsViewResult().IsDefault();
+            result.ShouldBe<ViewResult>().IsDefault();
         }
 
         [TestMethod]
@@ -34,7 +35,7 @@ namespace AssertMVC.Tests
 
             var result = controller.ViewWithLayout(viewName, layoutName);
 
-            result.AsViewResult().WithLayout(layoutName);
+            result.ShouldBe<ViewResult>().WithLayout(layoutName);
         }
 
         [TestMethod]
@@ -42,7 +43,7 @@ namespace AssertMVC.Tests
         {
             var result = controller.ViewWithModel();
 
-            result.AsViewResult().WithModel();
+            result.ShouldBe<ViewResult>().WithModel();
         }
 
         [TestMethod]
@@ -52,7 +53,7 @@ namespace AssertMVC.Tests
 
             var result = controller.ViewWithModel(model);
 
-            result.AsViewResult().WithModel().OfType<int>();
+            result.ShouldBe<ViewResult>().WithModel().OfType<int>();
         }
     }
 }

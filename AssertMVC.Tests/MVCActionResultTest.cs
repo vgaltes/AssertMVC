@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Web.Mvc;
 
 namespace AssertMVC.Tests
@@ -7,14 +8,19 @@ namespace AssertMVC.Tests
     public class MVCActionResultTest
     {
         [TestMethod]
-        public void TestConvertToViewResult()
+        public void TestShouldBeViewResult()
         {
             ActionResult viewResult = new ViewResult();
 
-            Assert.IsNotNull(viewResult.AsViewResult());
+            viewResult.ShouldBe<ViewResult>();
+        }
 
-            viewResult = new PartialViewResult();
-            Assert.IsNull(viewResult.AsViewResult());
+        [TestMethod]
+        public void TestShouldBeJsonResult()
+        {
+            ActionResult jsonResult = new JsonResult();
+
+            jsonResult.ShouldBe<JsonResult>();
         }
     }
 }
