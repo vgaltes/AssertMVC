@@ -19,5 +19,10 @@ namespace AssertMVC
         {
             Assert.AreEqual(layoutName, result.MasterName);
         }
+
+        public static void WithModel(this ViewResult result)
+        {
+            Assert.IsNotNull(result.Model);
+        }
     }
 }
