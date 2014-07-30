@@ -16,5 +16,14 @@ namespace AssertMVC.Tests
 
             result.AsViewResult().HasName(viewName);
         }
+
+        [TestMethod]
+        public void TestIsDefault()
+        {
+            var controller = new TestController();
+            var result = controller.DefaultView();
+
+            result.AsViewResult().IsDefault();
+        }
     }
 }
