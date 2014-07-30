@@ -20,11 +20,21 @@ namespace AssertMVC.Tests
         }
 
         [TestMethod]
+        public void TestPartialViewHasName()
+        {
+            string viewName = "TestPartialViewName";
+
+            var result = controller.IndexPartialView(viewName);
+
+            result.ShouldBe<PartialViewResult>().WithName(viewName);
+        }
+
+        [TestMethod]
         public void TestIsDefault()
         {
             var result = controller.DefaultView();
 
-            result.ShouldBe<ViewResult>().IsDefault();
+            result.ShouldBe<ViewResult>().Default();
         }
 
         [TestMethod]
