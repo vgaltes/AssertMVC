@@ -4,9 +4,9 @@ namespace AssertMVC.Tests.Controllers
 {
     public class TestController : Controller
     {
-        public ActionResult IndexView(string nameView)
+        public ActionResult IndexView(string viewName)
         {
-            return View(nameView);
+            return View(viewName);
         }
 
         internal ActionResult DefaultView()

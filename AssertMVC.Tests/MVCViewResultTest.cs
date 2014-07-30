@@ -6,12 +6,13 @@ namespace AssertMVC.Tests
     [TestClass]
     public class MVCViewResultTest
     {
+        TestController controller = new TestController();
+
         [TestMethod]
         public void TestViewHasName()
         {
             string viewName = "TestViewName";
-
-            var controller = new TestController();
+         
             var result = controller.IndexView(viewName);
 
             result.AsViewResult().HasName(viewName);
@@ -20,7 +21,6 @@ namespace AssertMVC.Tests
         [TestMethod]
         public void TestIsDefault()
         {
-            var controller = new TestController();
             var result = controller.DefaultView();
 
             result.AsViewResult().IsDefault();
@@ -31,7 +31,7 @@ namespace AssertMVC.Tests
         {
             var layoutName = "_layoutName";
             var viewName = "TestViewName";
-            var controller = new TestController();
+
             var result = controller.ViewWithLayout(viewName, layoutName);
 
             result.AsViewResult().WithLayout(layoutName);
