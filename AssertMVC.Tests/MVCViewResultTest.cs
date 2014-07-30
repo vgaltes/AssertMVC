@@ -44,5 +44,15 @@ namespace AssertMVC.Tests
 
             result.AsViewResult().WithModel();
         }
+
+        [TestMethod]
+        public void TestWithModelOfType()
+        {
+            var model = 1;
+
+            var result = controller.ViewWithModel(model);
+
+            result.AsViewResult().WithModel().OfType<int>();
+        }
     }
 }
