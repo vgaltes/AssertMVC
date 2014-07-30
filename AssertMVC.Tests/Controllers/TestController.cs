@@ -38,5 +38,10 @@ namespace AssertMVC.Tests.Controllers
         {
             return PartialView();
         }
+
+        internal ActionResult PartialViewWithModel()
+        {
+            return PartialView(1);
+        }
     }
 }

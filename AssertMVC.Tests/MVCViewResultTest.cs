@@ -65,6 +65,14 @@ namespace AssertMVC.Tests
         }
 
         [TestMethod]
+        public void TestPartialViewWithModel()
+        {
+            var result = controller.PartialViewWithModel();
+
+            result.ShouldBe<PartialViewResult>().WithModel();
+        }
+
+        [TestMethod]
         public void TestWithModelOfType()
         {
             var model = 1;
