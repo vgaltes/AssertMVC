@@ -78,7 +78,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="MVCActionResultTest.cs" />
+    <Compile Include="MVCViewResultTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
