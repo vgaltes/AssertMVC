@@ -36,5 +36,13 @@ namespace AssertMVC.Tests
 
             result.AsViewResult().WithLayout(layoutName);
         }
+
+        [TestMethod]
+        public void TestWithModel()
+        {
+            var result = controller.ViewWithModel();
+
+            result.AsViewResult().WithModel();
+        }
     }
 }
