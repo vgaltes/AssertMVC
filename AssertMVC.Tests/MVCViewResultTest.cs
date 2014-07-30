@@ -25,5 +25,16 @@ namespace AssertMVC.Tests
 
             result.AsViewResult().IsDefault();
         }
+
+        [TestMethod]
+        public void TestWithLayout()
+        {
+            var layoutName = "_layoutName";
+            var viewName = "TestViewName";
+            var controller = new TestController();
+            var result = controller.ViewWithLayout(viewName, layoutName);
+
+            result.AsViewResult().WithLayout(layoutName);
+        }
     }
 }

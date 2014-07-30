@@ -13,5 +13,10 @@ namespace AssertMVC.Tests.Controllers
         {
             return View();
         }
+
+        internal ActionResult ViewWithLayout(string viewName, string layoutName)
+        {
+            return View(viewName, layoutName);
+        }
     }
 }
