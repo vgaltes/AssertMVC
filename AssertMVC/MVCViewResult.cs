@@ -20,7 +20,7 @@ namespace AssertMVC
             Assert.AreEqual(layoutName, result.MasterName);
         }
 
-        public static MVCModel WithModel(this ViewResult result)
+        public static MVCModel WithModel(this ViewResultBase result)
         {
             Assert.IsNotNull(result.Model);
             return new MVCModel(result.Model);
