@@ -14,5 +14,10 @@ namespace AssertMVC
         {
             Assert.AreEqual(string.Empty, result.ViewName);
         }
+
+        public static void WithLayout(this ViewResult result, string layoutName)
+        {
+            Assert.AreEqual(layoutName, result.MasterName);
+        }
     }
 }
