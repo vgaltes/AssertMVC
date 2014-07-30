@@ -38,6 +38,14 @@ namespace AssertMVC.Tests
         }
 
         [TestMethod]
+        public void TestPartialViewIsDefault()
+        {
+            var result = controller.DefaultPartialView();
+
+            result.ShouldBe<PartialViewResult>().Default();
+        }
+
+        [TestMethod]
         public void TestWithLayout()
         {
             var layoutName = "_layoutName";
