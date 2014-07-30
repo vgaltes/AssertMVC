@@ -8,5 +8,10 @@ namespace AssertMVC.Tests.Controllers
         {
             return View(nameView);
         }
+
+        internal ActionResult DefaultView()
+        {
+            return View();
+        }
     }
 }

@@ -9,5 +9,10 @@ namespace AssertMVC
         {
             Assert.AreEqual(expectedName, result.ViewName);
         }
+
+        public static void IsDefault(this ViewResult result)
+        {
+            Assert.AreEqual(string.Empty, result.ViewName);
+        }
     }
 }
