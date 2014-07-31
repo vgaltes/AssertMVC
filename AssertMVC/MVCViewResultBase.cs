@@ -20,5 +20,10 @@ namespace AssertMVC
             Assert.IsNotNull(result.Model);
             return new MVCModel(result.Model);
         }
+
+        public static void WithViewBag(this ViewResultBase result)
+        {
+            Assert.IsNotNull(result.ViewBag);
+        }
     }
 }

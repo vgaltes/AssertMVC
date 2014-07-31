@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Web.Mvc;
 
 namespace AssertMVC.Tests.Controllers
 {
@@ -44,9 +47,10 @@ namespace AssertMVC.Tests.Controllers
             return PartialView(1);
         }
 
-        internal ActionResult ViewWithViewBag(int viewBag)
+        internal ActionResult ViewWithViewBag(string propertyName, object value)
         {
-            throw new System.NotImplementedException();
+            ViewData.Add(propertyName, value);
+            return View();
         }
     }
 }

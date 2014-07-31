@@ -83,10 +83,11 @@ namespace AssertMVC.Tests
         }
 
         [TestMethod]
-        public void TestWithViewBag()
+        public void TestWithViewBagProperty()
         {
-            var viewBag = 1;
-            var result = controller.ViewWithViewBag(viewBag);
+            string propertyName = "propertyName";
+            string value = "value";
+            var result = controller.ViewWithViewBag(propertyName, value);
 
             result.ShouldBe<ViewResult>().WithViewBag();
         }
