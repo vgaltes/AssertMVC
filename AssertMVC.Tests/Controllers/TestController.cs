@@ -49,6 +49,11 @@ namespace AssertMVC.Tests.Controllers
 
         internal ActionResult ViewWithViewBag(string propertyName, object value)
         {
+            return ViewWithViewData(propertyName, value);
+        }
+
+        internal ActionResult ViewWithViewData(string propertyName, object value)
+        {
             ViewData.Add(propertyName, value);
             return View();
         }

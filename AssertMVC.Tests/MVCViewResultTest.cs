@@ -101,5 +101,15 @@ namespace AssertMVC.Tests
 
             result.ShouldBe<ViewResult>().WithViewBag().WithPropertyEqualsTo(propertyName, value);
         }
+
+        [TestMethod]
+        public void TestWithViewDataProperty()
+        {
+            string propertyName = "propertyName";
+            string value = "value";
+            var result = controller.ViewWithViewData(propertyName, value);
+
+            result.ShouldBe<ViewResult>().WithViewData();
+        }
     }
 }
