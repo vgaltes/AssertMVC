@@ -39,6 +39,7 @@ namespace AssertMVC.Tests
             result.ShouldBe<PartialViewResult>().WithName(viewName);
         }
 
+
         [TestMethod]
         public void TestIsDefault()
         {
@@ -64,6 +65,17 @@ namespace AssertMVC.Tests
             var result = controller.ViewWithLayout(viewName, layoutName);
 
             result.ShouldBe<ViewResult>().WithLayout(layoutName);
+        }
+
+        [TestMethod]
+        public void TestWithLayoutWithFunctionComparision()
+        {
+            var layoutName = "_layoutName";
+            var viewName = "TestViewName";
+
+            var result = controller.ViewWithLayout(viewName, layoutName);
+
+            result.ShouldBe<ViewResult>().WithLayout(l => l == layoutName);
         }
 
         [TestMethod]
