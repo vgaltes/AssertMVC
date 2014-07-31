@@ -27,19 +27,4 @@ namespace AssertMVC
             return new MVCViewBag(result.ViewData);
         }
     }
-
-    public class MVCViewBag
-    {
-        ViewDataDictionary viewData;
-
-        public MVCViewBag(ViewDataDictionary viewData)
-        {
-            this.viewData = viewData;
-        }
-
-        public void WithPropertyEqualsTo(string propertyName, object value)
-        {
-            Assert.AreEqual(value, viewData[propertyName]);
-        }
-    }
 }
