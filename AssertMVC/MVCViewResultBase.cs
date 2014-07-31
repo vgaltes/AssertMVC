@@ -21,9 +21,25 @@ namespace AssertMVC
             return new MVCModel(result.Model);
         }
 
-        public static void WithViewBag(this ViewResultBase result)
+        public static MVCViewBag WithViewBag(this ViewResultBase result)
         {
             Assert.IsNotNull(result.ViewBag);
+            return new MVCViewBag(result.ViewData);
+        }
+    }
+
+    public class MVCViewBag
+    {
+        ViewDataDictionary viewData;
+
+        public MVCViewBag(ViewDataDictionary viewData)
+        {
+            this.viewData = viewData;
+        }
+
+        public void WithPropertyEqualsTo(string propertyName, object value)
+        {
+            Assert.AreEqual(value, viewData[propertyName]);
         }
     }
 }
