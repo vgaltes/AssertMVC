@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Web.Mvc;
 
 namespace AssertMVC
@@ -8,6 +9,11 @@ namespace AssertMVC
         public static void WithName(this ViewResultBase result, string expectedName)
         {
             Assert.AreEqual(expectedName, result.ViewName);
+        }
+
+        public static void WithName(this ViewResultBase result, Func<string, bool> evaluationFunction)
+        {
+            Assert.IsTrue(evaluationFunction(result.ViewName));
         }
 
         public static void Default(this ViewResultBase result)
