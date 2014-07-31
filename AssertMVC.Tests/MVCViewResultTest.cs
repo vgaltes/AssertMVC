@@ -20,6 +20,16 @@ namespace AssertMVC.Tests
         }
 
         [TestMethod]
+        public void TestViewHasNameWithFunctionComparision()
+        {
+            string viewName = "TestViewName";
+
+            var result = controller.IndexView(viewName);
+
+            result.ShouldBe<ViewResult>().WithName(n => n == viewName);
+        }
+
+        [TestMethod]
         public void TestPartialViewHasName()
         {
             string viewName = "TestPartialViewName";
