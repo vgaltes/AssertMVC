@@ -43,5 +43,10 @@ namespace AssertMVC.Tests.Controllers
         {
             return PartialView(1);
         }
+
+        internal ActionResult ViewWithViewBag(int viewBag)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

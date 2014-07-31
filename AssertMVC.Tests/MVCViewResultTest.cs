@@ -81,5 +81,14 @@ namespace AssertMVC.Tests
 
             result.ShouldBe<ViewResult>().WithModel().OfType<int>();
         }
+
+        [TestMethod]
+        public void TestWithViewBag()
+        {
+            var viewBag = 1;
+            var result = controller.ViewWithViewBag(viewBag);
+
+            result.ShouldBe<ViewResult>().WithViewBag();
+        }
     }
 }
