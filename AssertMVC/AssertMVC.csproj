@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="MVCActionResult.cs" />
     <Compile Include="MVCModel.cs" />
+    <Compile Include="MVCViewData.cs" />
     <Compile Include="MVCViewBag.cs" />
     <Compile Include="MVCViewResult.cs" />
     <Compile Include="MVCViewResultBase.cs" />

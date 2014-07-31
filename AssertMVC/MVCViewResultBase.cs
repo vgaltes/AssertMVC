@@ -23,13 +23,14 @@ namespace AssertMVC
 
         public static MVCViewBag WithViewBag(this ViewResultBase result)
         {
-            return WithViewData(result);
-        }
-
-        public static MVCViewBag WithViewData(this ViewResultBase result)
-        {
             Assert.IsNotNull(result.ViewBag);
             return new MVCViewBag(result.ViewData);
+        }
+
+        public static MVCViewData WithViewData(this ViewResultBase result)
+        {
+            Assert.IsNotNull(result.ViewBag);
+            return new MVCViewData(result.ViewData);
         }
     }
 }
