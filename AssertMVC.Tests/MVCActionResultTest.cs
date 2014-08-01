@@ -12,8 +12,7 @@ namespace AssertMVC.Tests
         {
             ActionResult viewResult = new ViewResult();
 
-            var result = viewResult.ShouldBe<ViewResult>();
-            Assert.IsInstanceOfType(result, typeof(MVCViewResult));
+            viewResult.ShouldBe<ViewResult>();
         }
 
         [TestMethod]
